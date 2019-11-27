@@ -1,0 +1,7 @@
+[defaults]
+url = "https://sentry.io"
+org = "noal"
+project = "wallet"
+
+[auth]
+token = "a5aeba3f180841dfbe0de487b09b42f988beba36445d4e23b83bdbba8885d509"

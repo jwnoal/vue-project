@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- 编码 -->
+  <meta charset="UTF-8" />
+  <!-- H5页面窗口自动调整到设备宽度，并禁止用户缩放页面 -->
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <!-- 当网站添加到主屏幕快速启动方式，可隐藏地址栏，仅针对ios的safari (ios7.0版本以后，safari上已看不到效果) -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <!-- 将网站添加到主屏幕快速启动方式，仅针对ios的safari顶端状态条的样式 (可选default、black、black-translucent) -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <!-- 忽略将页面中的数字识别为电话号码 -->
+  <meta name="format-detection" content="telephone=no" />
+  <!-- 忽略Android平台中对邮箱地址的识别 -->
+  <meta name="format-detection" content="email=no" />
+  <!-- 作者 -->
+  <meta name="author" content="章鱼输入法" />
+  <!-- 关键词 -->
+  <meta name="keywords" content="章鱼输入法" />
+  <!-- 描述信息 -->
+  <meta name="description" content="章鱼输入法" />
+  <!-- 骨架屏 -->
+  <% for (var jsFilePath of htmlWebpackPlugin.files.js) { %>
+  <link rel="preload" href="<%= jsFilePath %>" as="script">
+  <% } %>
+  <% for (var cssFilePath of htmlWebpackPlugin.files.css) { %>
+  <link rel="preload" href="<%= cssFilePath %>" as="style"
+    onload="this.onload=null;this.rel='stylesheet';window.STYLE_READY=1;window.mountApp&&window.mountApp();">
+  <noscript>
+    <link rel="stylesheet" href="<%= cssFilePath %>">
+  </noscript>
+  <% } %>
+  <script>!function (t) { "use strict"; t.loadCSS || (t.loadCSS = function () { }); var e = loadCSS.relpreload = {}; if (e.support = function () { var e; try { e = t.document.createElement("link").relList.supports("preload") } catch (t) { e = !1 } return function () { return e } }(), e.bindMediaToggle = function (t) { function e() { t.media = a } var a = t.media || "all"; t.addEventListener ? t.addEventListener("load", e) : t.attachEvent && t.attachEvent("onload", e), setTimeout(function () { t.rel = "stylesheet", t.media = "only x" }), setTimeout(e, 3e3) }, e.poly = function () { if (!e.support()) for (var a = t.document.getElementsByTagName("link"), n = 0; n < a.length; n++) { var o = a[n]; "preload" !== o.rel || "style" !== o.getAttribute("as") || o.getAttribute("data-loadcss") || (o.setAttribute("data-loadcss", !0), e.bindMediaToggle(o)) } }, !e.support()) { e.poly(); var a = t.setInterval(e.poly, 500); t.addEventListener ? t.addEventListener("load", function () { e.poly(), t.clearInterval(a) }) : t.attachEvent && t.attachEvent("onload", function () { e.poly(), t.clearInterval(a) }) } "undefined" != typeof exports ? exports.loadCSS = loadCSS : t.loadCSS = loadCSS }("undefined" != typeof global ? global : this);</script>
+
+  <link rel="shortcut icon" href="//mini.eastday.com/toutiaoh5/img/favicon.ico" />
+  <title>钱包</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but vuecli3 doesn't work properly without JavaScript enabled. Please enable it to
+      continue.</strong>
+  </noscript>
+  <div id="app">
+  </div>
+  <!-- built files will be auto injected -->
+</body>
+
+</html>

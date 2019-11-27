@@ -1,0 +1,92 @@
+@import "./border1px.scss";
+// 边距
+.plr {
+  padding: 0 0.3rem;
+}
+.mt10 {
+  margin-top: 0.2rem;
+}
+//字体大小
+
+// 居中
+.center {
+  // 父元素：position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// line-height android 居中
+.lightmiddle{
+  &::before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 0;
+    height: 100%;
+    margin-top: 1px;
+  }
+}
+
+// 蒙层
+.mask {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.4);
+  .contain {
+    width: 5.2rem;
+    background: #fff;
+    border-radius: 0.15rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.4rem;
+    text-align: center;
+    .close {
+      position: absolute;
+      top: 0.2rem;
+      right: 0.2rem;
+      width: 0.32rem;
+      height: 0.32rem;
+    }
+  }
+}
+
+.defaultbtn {
+  display: block;
+  height: 0.9rem;
+  font-size: 0.34rem;
+  text-align: center;
+  line-height: 0.9rem;
+  color: #fff;
+  border: 1px solid #07c2c7;
+  background: #07c2c7;
+  border-radius: 0.9rem;
+}
+
+.doublebtn {
+  position: relative;
+  height: 0.9rem;
+  margin-top: 0.2rem;
+  a {
+    display: inline-block;
+    height: 0.9rem;
+    font-size: 0.34rem;
+    text-align: center;
+    line-height: 0.9rem;
+    color: #07c2c7;
+    border: 1px solid #07c2c7;
+    border-radius: 0.9rem;
+    position: absolute;
+    left: 0.4rem;
+  }
+  .second {
+    margin-left: 0.8rem;
+    color: #fff;
+    background: #07c2c7;
+    left: auto;
+    right: 0.4rem;
+  }
+}

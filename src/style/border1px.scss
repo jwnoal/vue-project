@@ -1,0 +1,114 @@
+$color: #E7E7E7;
+
+%setTopLine {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 1px;
+  border-top: 1px solid $color;
+  color: $color;
+  transform-origin: 0 0;
+  transform: scaleY(0.5);
+}
+
+%setBottomLine {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  border-bottom: 1px solid $color;
+  color: $color;
+  transform-origin: 0 100%;
+  transform: scaleY(0.5);
+}
+
+%setLeftLine {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  bottom: 0;
+  border-left: 1px solid $color;
+  color: $color;
+  transform-origin: 0 0;
+  transform: scaleX(0.5);
+}
+
+%setRightLine {
+  content: " ";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1px;
+  bottom: 0;
+  border-right: 1px solid $color;
+  color: $color;
+  transform-origin: 100% 0;
+  transform: scaleX(0.5);
+}
+
+%setLine {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200%;
+  border: 1px solid $color;
+  color: $color;
+  height: 200%;
+  transform-origin: left top;
+  transform: scale(0.5);
+}
+
+.border-1px,
+.border-1px-t,
+.border-1px-b,
+.border-1px-tb,
+.border-1px-l,
+.border-1px-r {
+  position: relative;
+}
+
+.border-1px {
+  &:before {
+    @extend %setLine;
+  }
+}
+
+.border-1px-t {
+  &:before {
+    @extend %setTopLine;
+  }
+}
+
+.border-1px-b {
+  &:after {
+    @extend %setBottomLine;
+  }
+}
+
+.border-1px-tb {
+  &:before {
+    @extend %setTopLine;
+  }
+  &:after {
+    @extend %setBottomLine;
+  }
+}
+
+.border-1px-l {
+  &:before {
+    @extend %setLeftLine;
+  }
+}
+
+.border-1px-r {
+  &:after {
+    @extend %setRightLine;
+  }
+}
